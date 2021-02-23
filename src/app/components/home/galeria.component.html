@@ -1,0 +1,55 @@
+
+<div class="row mb-5" >
+
+  <div class="col-md-6">
+
+    <div class="row">
+      <div class="col div-pick-1 cursor"
+            [ngStyle]="{ 'background-image' : 'url('+ (galeria[0] | noimage ) +')'}"
+            (click)="verPelicula(galeria[0].id)">
+            <span class="nombre_pelicula">{{ galeria[0].original_title }}</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col div-pick-2 cursor"
+        [ngStyle] ="{ 'background-image': 'url('+ (galeria[1] | noimage ) +')'}"
+        (click)="verPelicula(galeria[1].id)">
+        <span class="nombre_pelicula"> {{ galeria[1].original_title }}</span>
+      </div>
+      <div class="col div-pick-2 cursor"
+        [ngStyle] ="{ 'background-image': 'url('+ (galeria[2] | noimage ) +')'}"
+        (click)="verPelicula(galeria[2].id)">
+        <span class="nombre_pelicula">{{ galeria[2].original_title }}</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-md-6">
+
+    <div class="row">
+      <div class="col div-pick-2 cursor"
+        [ngStyle] ="{ 'background-image': 'url('+ (galeria[3] | noimage ) +')'}"
+        (click)="verPelicula(galeria[3].id)">
+        <span class="nombre_pelicula"> {{ galeria[3].original_title }}</span>
+      </div>
+      <div class="col div-pick-2 cursor"
+        [ngStyle] ="{ 'background-image': 'url('+ (galeria[4] | noimage ) +')'}"
+        (click)="verPelicula(galeria[4].id)">
+        <span class="nombre_pelicula">{{ galeria[4].original_title }}</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col div-pick-1 cursor"
+            [ngStyle]="{ 'background-image' : 'url('+ ( galeria[5] | noimage ) +')'}"
+            (click)="verPelicula(galeria[5].id)">
+            <span class="nombre_pelicula">{{ galeria[5].original_title }}</span>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+

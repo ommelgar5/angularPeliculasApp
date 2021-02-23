@@ -1,0 +1,23 @@
+
+<h1>Cartelera</h1>
+<hr>
+
+<div *ngIf="cargandoCatelera" class="text-center mb-5 animated fadeIn">
+  <i class="fa fa-sync fa-spin fa-3x"></i>
+</div>
+
+<div *ngIf="!cargandoCatelera" class="animated fadeIn">
+  <app-galeria [galeria]="ps.carteleras | slice:0-6"></app-galeria>
+</div>
+
+
+<h1>Las peliculas más populares</h1>
+<hr>
+
+<div *ngIf="cargandoPopulares" class="text-center mb-5 animated fadeIn">
+  <i class="fa fa-sync fa-spin fa-3x"></i>
+</div>
+
+<div  *ngIf="!cargandoPopulares"  class="animated fadeIn">
+  <app-galeria [galeria]="ps.populares | slice:0-6"></app-galeria>
+</div>

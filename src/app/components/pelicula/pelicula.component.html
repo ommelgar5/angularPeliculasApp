@@ -1,0 +1,23 @@
+
+<div *ngIf="cargandoPelicula" class="text-center mt-5 animated fadeIn">
+  <i class="fa fa-sync fa-spin fa-3x"></i>
+</div>
+
+<div *ngIf="!cargandoPelicula" class="row mb-5 animated fadeIn">
+  <h1 class="mb-4">{{ ps.pelicula.original_title }}</h1>
+  <div class="col-4">
+    <img  class="img-fluid img-thumbnail" [src]="ps.pelicula | noimage:true">
+  </div>
+  <div class="col">
+    <h3>Sinopsis</h3>
+    <hr>
+    <p> {{ ps.pelicula.overview || 'No hay por el momento!'}}</p>
+    <h5 class="mb-2">Freace celebre</h5>
+    <p> {{ ps.pelicula.tagline || 'No hay por el momento!'}}</p>
+
+    <p class="mb-0">Popularidad: <span class="badge bg-primary">{{ ps.pelicula.popularity % 10 | number:'.0-0' }}/10</span></p>
+    <p>Voto promedio: <span class="badge bg-primary">{{ ps.pelicula.vote_average }}</span></p>
+    <button class="btn btn-outline-danger"
+            (click)="regresar()"> <i class="fa fa-arrow-left"></i> regresar</button>
+  </div>
+</div>

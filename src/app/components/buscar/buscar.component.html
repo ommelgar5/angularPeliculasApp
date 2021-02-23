@@ -1,0 +1,37 @@
+<form class="mb-5" (ngSubmit)="buscar()">
+
+  <label class="form-label" >Buscar: </label>
+  <input type="text" name="termino" class="form-control" placeholder="Digite el nombre de la pelicula"
+          [(ngModel)]="busqueda"
+          required>
+</form>
+
+
+<div *ngIf="cargandoResultados" class="text-center my-5 animated fadeIn">
+  <i class="fa fa-sync fa-spin fa-3x"></i>
+</div>
+
+<div *ngIf="ps.resultados.length" class="animated fadeIn">
+  <h2>Resultados...</h2>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col cursor"
+        *ngFor="let resultado of ps.resultados"
+        (click)="verPelicula(resultado.id)">
+      <div class="card h-100">
+      <img [src]=" resultado | noimage:false:true" class="card-img-top" [alt]="resultado.original_title">
+        <div class="card-body">
+          <h5 class="card-title">{{ resultado.original_title }}</h5>
+          <p class="card-text">{{ resultado.overview | slice:0-200 }} ...</p>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+<div *ngIf="ps.resultados.length == 0" class="alert alert-info text-center" role="alert">
+  <i class="fa fa-info-circle fa-3x"></i>
+  <p>
+    <strong>No hay resultados!</strong> de la pelicula buscada :(
+  </p>
+</div>
